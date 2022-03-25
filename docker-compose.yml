@@ -4,6 +4,10 @@ services:
     image: joyzoursky/python-chromedriver:3.9-selenium
     volumes:
       - '.:/pass'
+      - type: tmpfs
+        target: /dev/shm
+        tmpfs:
+          size: 16000000000 # ~16gb
     ports:
       - '4445:4444'
     command: python3 pass/pass-fur-alle.py
