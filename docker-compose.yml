@@ -1,0 +1,9 @@
+---
+services:
+  driver:
+    image: joyzoursky/python-chromedriver:3.9-selenium
+    volumes:
+      - '.:/pass'
+    ports:
+      - '4445:4444'
+    command: python3 pass/pass-fur-alle.py
